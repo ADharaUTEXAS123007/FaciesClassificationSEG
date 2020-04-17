@@ -31,7 +31,7 @@ To download the training and testing data, run the following commands in the ter
 
 ```bash
 # download the files: 
-wget https://www.dropbox.com/s/p6cbgbocxwj04sw/data.zip
+wget https://zenodo.org/record/3755060/files/data.zip
 # check that the md5 checksum matches: 
 openssl dgst -md5 data.zip # Make sure the result looks like this: MD5(data.zip)= bc5932279831a95c0b244fd765376d85, otherwise the downloaded data.zip is corrupted. 
 # unzip the data:
@@ -40,7 +40,7 @@ unzip data.zip
 mkdir data/splits
 ```
 
-Alternatively, you can click [here](https://www.dropbox.com/s/p6cbgbocxwj04sw/data.zip) to download the data directly. Make sure you have the following folder structure in the `data` directory after you unzip the file: 
+Alternatively, you can click [here](https://zenodo.org/record/3755060/files/data.zip) to download the data directly. Make sure you have the following folder structure in the `data` directory after you unzip the file: 
 
 ```bash
 data
@@ -64,7 +64,7 @@ train_seismic = np.load('data/train/train_seismic.npy')
 
 **Make sure the testing data is only used once after all models are trained. Using the test set multiple times makes it a validation set.**
 
-We also provide fault planes, and the raw horizons that were used to generate the data volumes in addition to the processed data volumes before splitting to training and testing. If you're interested in this data, you can download it from [here](https://www.dropbox.com/s/cvfrud3kp3o69ar/raw.zip). In addition, you can download the well log files from [here](https://www.dropbox.com/s/vupljhjd3pqr8du/logs.zip). 
+We also provide fault planes, and the raw horizons that were used to generate the data volumes in addition to the processed data volumes before splitting to training and testing. If you're interested in this data, you can download it from [here](https://zenodo.org/record/3755060/files/raw.zip). In addition, you can download the well log files from [here](https://zenodo.org/record/3755060/files/logs.zip). 
 
   
 
@@ -105,12 +105,12 @@ To test a model, you have to specify the path to the trained model. For example,
 python patch_test.py --model_path 'path/to/trained_model.pkl' 
 ```
 
-In order to be consistent with the results of the paper, we suggest you keep all the test options to their deafault values (such as `test_stride` , `crossline` and `inline` ). Feel free to change the test `split` if you do not want to test on both test splits, and make sure you update `train_patch_size` if it was changed during training. Once the test code is finished, it will print the results in the terminal. You can also view the test results, both images and metrics, in Tensorboard.  
+In order to be consistent with the results of the paper, we suggest you keep all the test options to their default values (such as `test_stride` , `crossline` and `inline` ). Feel free to change the test `split` if you do not want to test on both test splits, and make sure you update `train_patch_size` if it was changed during training. Once the test code is finished, it will print the results in the terminal. You can also view the test results, both images and metrics, in Tensorboard.  
 
 
 ## Citation: 
 
-If you have found our code and data useful, we kindly ask you to cite our work. You can cite the arXiv preprint for now: 
+If you have found our code and data useful, we kindly ask you to cite our work. You can cite our *Interpretation* journal: 
 ```tex
 @article{alaudah2019machine,
 author = {Yazeed Alaudah and Patrycja Michałowicz and Motaz Alfarraj and Ghassan AlRegib},
